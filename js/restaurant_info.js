@@ -49,7 +49,7 @@ initMap = () => {
       DBHelper.mapMarkerForRestaurant(self.restaurant, self.map);
     }
   });
-} 
+} */
 
 /**
  * Get current restaurant from page URL.
