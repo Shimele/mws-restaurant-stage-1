@@ -3,6 +3,7 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
+var tabIndexCount = 3;
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -156,6 +157,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
  * Create restaurant HTML.
  */
 createRestaurantHTML = (restaurant) => {
+  console.log("tabindex is " + tabIndexCount);
   const li = document.createElement('li');
 
   const image = document.createElement('img');
@@ -178,6 +180,8 @@ createRestaurantHTML = (restaurant) => {
 
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
+  more.tabIndex = tabIndexCount;
+  tabIndexCount++;
   more.href = DBHelper.urlForRestaurant(restaurant);
   li.append(more)
 
